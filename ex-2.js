@@ -80,5 +80,15 @@ let orders = [
     creditCardType: "visa-electron",
   },
 ];
-
-// Start coding here
+  //ถ้า creditCardType เป็น "jcb"
+  //จะนำค่าของ productPrice มาคูณกับค่าของ productQuantity 
+   //เมื่อได้ค่าด้านบนแล้ว ให้นำค่าที่ได้แต่ล่ะค่ามารวมกัน
+let total = 0;
+for (let i = 0; i < orders.length; i++) {
+  let calculateTotal = 0;
+  if (orders[i].creditCardType === "jcb") {
+   calculateTotal = orders[i].productPrice * orders[i].productQuantity
+   total = total + calculateTotal
+  }
+}
+console.log(`Paid by JCB credit card amount: ${total.toLocaleString()} Baht`);
