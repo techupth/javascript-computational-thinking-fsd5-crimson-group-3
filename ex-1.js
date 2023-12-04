@@ -82,3 +82,11 @@ let orders = [
 ];
 
 // Start coding here
+
+let totalAmount = 0;
+
+for (let item of orders) {
+  totalAmount = totalAmount + item.productQuantity * item.productPrice;
+}
+
+console.log(`Total amount of the orders: ${totalAmount.toLocaleString()} Bath`);
