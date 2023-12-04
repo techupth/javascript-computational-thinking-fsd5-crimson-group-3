@@ -80,5 +80,22 @@ let orders = [
     creditCardType: "visa-electron",
   },
 ];
+  //นำค่าของ productPrice มาคูณกับค่าของ productQuantity ก่อน
+   //เมื่อได้ค่าด้านบนแล้ว ให้นำค่าที่ได้แต่ล่ะค่ามารวมกัน
+// let total = 0 ;
+// for (let i = 0; i < orders.length; i++) {
+//    let calculateTotal = orders[i].productPrice * orders[i].productQuantity
+//   total = total + calculateTotal
+// }
+// console.log(`Total amount of the orders: ${total.toLocaleString()} Baht`);
 
-// Start coding here
+
+function totalPrice(arder) {
+  let total = 0;
+  for (let i = 0; i < arder.length; i++) {
+  let calculateTotal = arder[i].productPrice * arder[i].productQuantity
+   total = total + calculateTotal
+  }
+  return total
+}
+console.log(`Total amount of the orders: ${totalPrice(orders).toLocaleString()} Baht`);

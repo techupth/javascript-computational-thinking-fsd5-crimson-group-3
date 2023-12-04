@@ -80,5 +80,16 @@ let orders = [
     creditCardType: "visa-electron",
   },
 ];
+//ถ้ามูลค่ามีค่าสูงที่สุดใน orders(นำ productPrice * productQuantity ) 
+//ให้นำข้อมูลของค่านั้นมาแสดงผล พร้อมกับเลขไอดีนั้น
 
-// Start coding here
+let mostSumTotalPrice = 0;
+let idNumber = 0;
+for (let i = 0; i < orders.length; i++) {
+ let sumTotalPrice = orders[i].productPrice * orders[i].productQuantity
+ if (sumTotalPrice > mostSumTotalPrice) {
+   mostSumTotalPrice = sumTotalPrice
+   idNumber = orders[i].id
+  }
+}
+console.log(`The most expensive order is order id: ${idNumber} (${mostSumTotalPrice.toLocaleString()} Baht)`);
