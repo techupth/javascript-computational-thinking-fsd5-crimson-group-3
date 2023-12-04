@@ -80,5 +80,12 @@ let orders = [
     creditCardType: "visa-electron",
   },
 ];
-
-// Start coding here
+//ถ้า customerName เป็น "Birdie Shepland" 
+//จะนำผลรวมมูลค่ามาแสดงผล (หาได้จาก productPrice * productQuantity)
+let totalPrice = 0;
+for (let i = 0; i < orders.length; i++) {
+  if (orders[i].customerName === "Birdie Shepland") {
+   totalPrice = orders[i].productPrice * orders[i].productQuantity
+   }
+}
+console.log(`Total paid amount of Birdie Shepland: ${totalPrice.toLocaleString()} Baht`);

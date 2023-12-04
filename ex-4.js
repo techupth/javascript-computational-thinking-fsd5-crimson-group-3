@@ -80,5 +80,14 @@ let orders = [
     creditCardType: "visa-electron",
   },
 ];
-
-// Start coding here
+//ถ้าค่า productPrice มีค่ามากที่สุด จะให้โชว์ค่าของ productName 
+let productCost = 0;
+let productName;
+for (let i = 0; i < orders.length; i++) {
+ if (orders[i].productPrice > productCost) {
+  productCost = orders[i].productPrice
+  productName = orders[i].productName
+ }
+}
+console.log(productCost);
+console.log(productName);
